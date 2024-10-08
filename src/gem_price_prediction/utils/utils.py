@@ -8,7 +8,7 @@ from src.gem_price_prediction.exception.exception import customexception
 from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
 def save_obj (file_path,obj):
-    logging.info(f"Saving {obj} initiated")
+    logging.info(f"Saving object initiated")
     try:
         dir_path = os.path.dirname(file_path)
         os.makedirs(dir_path,exist_ok=True)

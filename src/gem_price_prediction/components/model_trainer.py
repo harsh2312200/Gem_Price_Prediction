@@ -22,8 +22,11 @@ class ModelTrainer:
     def initiate_model_training(self,train_array,test_array):
         try:
             logging.info("splitting Dependent and independent variables from data")
-            x_train,y_train,x_test,y_test = (
-                train_array[:,:-1],train_array[:,-1],test_array[:,:,-1],test_array[:,-1]
+            x_train, y_train, x_test, y_test = (
+                train_array[:, :-1],
+                train_array[:, -1],
+                test_array[:, :-1],
+                test_array[:, -1]
             )
 
             models = {
@@ -49,7 +52,7 @@ class ModelTrainer:
 
             logging.info(f'Best Model Found , Model Name : {best_model_name} , R2 Score : {best_model_score}')
 
-            save_object(
+            save_obj(
             file_path=self.model_trainer_config.trained_model_file_path,
             obj=best_model
             )

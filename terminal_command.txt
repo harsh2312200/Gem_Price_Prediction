@@ -1,0 +1,8 @@
+python src/gem_price_prediction/components/data_transformation.py
+
+If this command does not work and give error like not able to find src Module
+Or gives module not found error
+run command in this manner
+
+python -m src.gem_price_prediction.components.data_ingestion
+python -m src.gem_price_prediction.components.data_transformation

@@ -1,0 +1,123 @@
+INFO:waitress:Serving on http://0.0.0.0:5000
+Running the mlflow server failed. Please see the logs above for details.
+INFO:waitress:Serving on http://0.0.0.0:5000
+2024/10/11 13:29:12 ERROR mlflow.server: Exception on /ajax-api/2.0/mlflow/artifacts/list [GET]
+Traceback (most recent call last):
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 574, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 615, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 1041, in _list_artifacts
+    response_message = list_artifacts_impl(request_message)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 1063, in list_artifacts_impl
+    artifact_entities = _get_artifact_repo(run).list_artifacts(path)
+AttributeError: 'Response' object has no attribute 'list_artifacts'
+2024/10/11 15:27:46 ERROR mlflow.server: Exception on /ajax-api/2.0/mlflow/artifacts/list [GET]
+Traceback (most recent call last):
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 574, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 615, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 1041, in _list_artifacts
+    response_message = list_artifacts_impl(request_message)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 1063, in list_artifacts_impl
+    artifact_entities = _get_artifact_repo(run).list_artifacts(path)
+AttributeError: 'Response' object has no attribute 'list_artifacts'
+2024/10/11 15:47:50 ERROR mlflow.server: Exception on /ajax-api/2.0/mlflow/artifacts/list [GET]
+Traceback (most recent call last):
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 574, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 615, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 1041, in _list_artifacts
+    response_message = list_artifacts_impl(request_message)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 1063, in list_artifacts_impl
+    artifact_entities = _get_artifact_repo(run).list_artifacts(path)
+AttributeError: 'Response' object has no attribute 'list_artifacts'
+2024/10/11 15:49:44 ERROR mlflow.server: Exception on /ajax-api/2.0/mlflow/artifacts/list [GET]
+Traceback (most recent call last):
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 574, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 615, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 1041, in _list_artifacts
+    response_message = list_artifacts_impl(request_message)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 1063, in list_artifacts_impl
+    artifact_entities = _get_artifact_repo(run).list_artifacts(path)
+AttributeError: 'Response' object has no attribute 'list_artifacts'
+2024/10/11 15:49:46 ERROR mlflow.server: Exception on /ajax-api/2.0/mlflow/artifacts/list [GET]
+Traceback (most recent call last):
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 574, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 615, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 1041, in _list_artifacts
+    response_message = list_artifacts_impl(request_message)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 1063, in list_artifacts_impl
+    artifact_entities = _get_artifact_repo(run).list_artifacts(path)
+AttributeError: 'Response' object has no attribute 'list_artifacts'
+2024/10/11 15:49:48 ERROR mlflow.server: Exception on /ajax-api/2.0/mlflow/artifacts/list [GET]
+Traceback (most recent call last):
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\ACER\anaconda3\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 574, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 615, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 1041, in _list_artifacts
+    response_message = list_artifacts_impl(request_message)
+  File "C:\Users\ACER\anaconda3\lib\site-packages\mlflow\server\handlers.py", line 1063, in list_artifacts_impl
+    artifact_entities = _get_artifact_repo(run).list_artifacts(path)
+AttributeError: 'Response' object has no attribute 'list_artifacts'
+forrtl: error (200): program aborting due to window-CLOSE event
+Image              PC                Routine            Line        Source             
+libifcoremd.dll    00007FFD5F5EDF54  Unknown               Unknown  Unknown
+KERNELBASE.dll     00007FFDFC0F2727  Unknown               Unknown  Unknown
+KERNEL32.DLL       00007FFDFD82257D  Unknown               Unknown  Unknown
+ntdll.dll          00007FFDFE94AF28  Unknown               Unknown  Unknown

@@ -6,5 +6,6 @@ flask
 mlflow==2.2.2
 dvc
 xgboost
+setuptools
 
 - e.

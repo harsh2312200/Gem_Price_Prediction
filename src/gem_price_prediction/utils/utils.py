@@ -30,37 +30,39 @@ def load_obj(file_path):
         raise customexception(e,sys)
 
 
-def evaluate_model(x_train,y_train,x_test,y_test,models):
-    try :
+def evaluate_model(x_train, y_train, x_test, y_test, models):
+    try:
         logging.info("Model training started")
         training_model = []
         report = {}
-        r2= []
-        for i in range(len(models)):
-            model = list(models.values())[i]
-            model.fit(x_train,y_train)
-            training_model.append(list(models.keys())[i])
+        for model_name, model in models.items():
+            model.fit(x_train, y_train)
+            training_model.append(model_name)
+
+            # Make predictions on the test data
             y_test_pred = model.predict(x_test)
 
-            test_model_score = r2_score(y_test,y_test_pred)
-            r2.append(test_model_score)
+            # Calculate evaluation metrics
+            r2 = r2_score(y_test, y_test_pred)
+            rmse = np.sqrt(mean_squared_error(y_test, y_test_pred))
+            mae = mean_absolute_error(y_test, y_test_pred)
 
-            report[list(models.keys())[i]] = test_model_score
+            # Log the metrics into the report dictionary for each model
+            report[model_name] = {
+                "r2_score": r2,
+                "rmse": rmse,
+                "mae": mae
+            }
 
-        training_model = pd.Series(training_model)
-        r2 = pd.Series(r2)
-        scores = pd.concat([training_model, r2], axis=1, ignore_index=True)
-        scores.columns = ['Model', 'r2_score']
+        # Create a DataFrame for logging purposes (optional)
+        scores_df = pd.DataFrame(report).T  # Transpose the dict to a DataFrame for readability
+        logging.info(f"Model Scores after training: \n{scores_df}")
 
-        logging.info(f"Model Scores after training : \n {scores}")
         return report
 
     except Exception as e:
-        logging.info("Exception Occurred during the model training")
-        raise customexception(e,sys)
-
-
-
+        logging.info("Exception occurred during model evaluation")
+        raise customexception(e, sys)
 
 
 

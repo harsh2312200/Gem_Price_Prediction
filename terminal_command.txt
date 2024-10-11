@@ -6,3 +6,25 @@ run command in this manner
 
 python -m src.gem_price_prediction.components.data_ingestion
 python -m src.gem_price_prediction.components.data_transformation
+
+
+
+
+
+###########################################
+For connecting mlflow with database and sql server command
+Git Bash prompt :
+$ nohup mlflow server \
+    --backend-store-uri "mssql+pyodbc://DESKTOP-R84RSN6\\SQLEXPRESS/mlflow_db?driver=ODBC+Driver+17+for+SQL+Server&trusted_connection=yes" \
+    --default-artifact-root "D:/MLOPS/Gem_Price_Prediction/mlflow_artifacts" \
+    --host 0.0.0.0 \
+    --port 5000 &
+[1] 300  # this is the PID you will get after the connecting is done
+
+TO STOP THE CONNECTING
+kill <PID> #    enter the above PID to stop server
+
+
+steps involved in this set-up
+
+

@@ -1,0 +1,68 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python -c "from src.gem_price_prediction.pipeline.training_pipeline import
+      Training_Pipeline; Training_Pipeline().start_data_Ingestion()"
+    deps:
+    - path: src/gem_price_prediction/components/data_ingestion.py
+      hash: md5
+      md5: 97cad01a170ba9d976aad9b9e48d1dee
+      size: 2021
+    - path: src/gem_price_prediction/exception/exception.py
+      hash: md5
+      md5: 8c70ec644339cf08ca805279804608f6
+      size: 631
+    - path: src/gem_price_prediction/logger/logger.py
+      hash: md5
+      md5: 52e2cf7110eaff908f53866953c85104
+      size: 545
+    outs:
+    - path: artifacts/raw.csv
+      hash: md5
+      md5: 4d3b99278017349368e70a85aa43bd7d
+      size: 10656378
+    - path: artifacts/test.csv
+      hash: md5
+      md5: 528ea2dde5117d84dc996e663be0073b
+      size: 2664564
+    - path: artifacts/train.csv
+      hash: md5
+      md5: 83fb94077ea5942f012fad4d5ebbc8f3
+      size: 7991866
+  data_transformation:
+    cmd: python -c "from src.gem_price_prediction.pipeline.training_pipeline import
+      Training_Pipeline; pipeline = Training_Pipeline(); train_data, test_data = pipeline.start_data_Ingestion();
+      pipeline.start_data_transformation(train_data, test_data)"
+    deps:
+    - path: artifacts/test.csv
+      hash: md5
+      md5: f6fa2fb9156363ed1eeed419b1359804
+      size: 2663977
+    - path: artifacts/train.csv
+      hash: md5
+      md5: 1e003b4d2c6dbd24fb923a04768cbdfc
+      size: 7992453
+    - path: src/gem_price_prediction/components/data_transformation.py
+      hash: md5
+      md5: 2a17a313d88c0aeb5a60083112b2e2c9
+      size: 4219
+    outs:
+    - path: artifacts/preprocessor.pkl
+      hash: md5
+      md5: 23fa1702fe13ec0357146df98dd6838b
+      size: 3099
+  model_training:
+    cmd: python -c "from src.gem_price_prediction.pipeline.training_pipeline import
+      Training_Pipeline; pipeline = Training_Pipeline(); train_data, test_data = pipeline.start_data_Ingestion();
+      train_arr, test_arr = pipeline.start_data_transformation(train_data, test_data);
+      pipeline.start_model_training(train_arr, test_arr)"
+    deps:
+    - path: src/gem_price_prediction/components/model_trainer.py
+      hash: md5
+      md5: aa81fca828679b6136bba733ed9e9b3e
+      size: 3158
+    outs:
+    - path: artifacts/model.pkl
+      hash: md5
+      md5: 656ba3bca4f08ab2b10631b94744604d
+      size: 428753

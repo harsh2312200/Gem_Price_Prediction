@@ -1,0 +1,27 @@
+stages:
+  data_ingestion:
+    cmd: python -c "from src.gem_price_prediction.pipeline.training_pipeline import Training_Pipeline; Training_Pipeline().start_data_Ingestion()"
+    deps:
+      - src/gem_price_prediction/components/data_ingestion.py
+      - src/gem_price_prediction/logger/logger.py
+      - src/gem_price_prediction/exception/exception.py
+    outs:
+      - artifacts/raw.csv
+      - artifacts/train.csv
+      - artifacts/test.csv
+
+  data_transformation:
+    cmd: python -c "from src.gem_price_prediction.pipeline.training_pipeline import Training_Pipeline; pipeline = Training_Pipeline(); train_data, test_data = pipeline.start_data_Ingestion(); pipeline.start_data_transformation(train_data, test_data)"
+    deps:
+      - src/gem_price_prediction/components/data_transformation.py
+      - artifacts/train.csv
+      - artifacts/test.csv
+    outs:
+      - artifacts/preprocessor.pkl
+
+  model_training:
+    cmd: python -c "from src.gem_price_prediction.pipeline.training_pipeline import Training_Pipeline; pipeline = Training_Pipeline(); train_data, test_data = pipeline.start_data_Ingestion(); train_arr, test_arr = pipeline.start_data_transformation(train_data, test_data); pipeline.start_model_training(train_arr, test_arr)"
+    deps:
+      - src/gem_price_prediction/components/model_trainer.py
+    outs:
+      - artifacts/model.pkl
